@@ -1,0 +1,30 @@
+{
+  "name": "debugelton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:css && npm run build:js",
+    "watch": "node_modules/watch/cli.js 'npm run build' src/app/public/js/assets src/app/public/less",
+    "build:css": "node_modules/less/bin/lessc src/app/public/less/style.less > src/app/public/css/style.css",
+    "watch:less": "node_modules/watch/cli.js 'npm run build:css' src/app/public/less/",
+    "build:js": "node_modules/browserify/bin/cmd.js src/app/public/js/assets/main.js > src/app/public/js/dist/bundle.js",
+    "watch:js": "node_modules/watch/cli.js 'npm run build:js' src/app/public/js/assets/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "glob": "^7.1.2",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "less": "^2.7.2",
+    "watch": "^1.0.1"
+  }
+}

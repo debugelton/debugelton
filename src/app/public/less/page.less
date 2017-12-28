@@ -1,0 +1,130 @@
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.responsive-img {
+    width: 100%;
+}
+
+.flower {
+    position: relative;
+    .leaf {
+        background: white;
+        width: 50px;
+        border-radius: 30px 30px 0 30px;
+        height: 50px;
+        position: absolute;
+        transform-origin: 100% 100%;
+        box-shadow: 1px 1px 30px white;
+        border: 1px solid;
+        &:nth-child(1) {
+            transform: rotate(0deg);
+        }
+        &:nth-child(2) {
+            transform: rotate(80deg);
+        }
+        &:nth-child(3) {
+            transform: rotate(160deg);
+        }
+        &:nth-child(4) {
+            transform: rotate(230deg);
+        }
+        &:nth-child(5) {
+            transform: rotate(290deg);
+        }
+    }
+    .circle {
+        width: 40px;
+        background: yellow;
+        border-radius: 300px;
+        height: 40px;
+        position: absolute;
+        top: 29px;
+        left: 30px;
+        box-shadow: 1px 0px 9px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.menu-trigger {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    padding: 1em;
+    background: #fff;
+    .fa {
+        background: #fff;
+        font-size: 3em;
+        position: absolute;
+        right: 0;
+        padding: 15px;
+    }
+}
+.menu {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+    font-size: 2em;
+    width: 0;
+    right: 0;
+    .box-shadow(-1px 1px 11px rgba(0, 0, 0, 0.9));
+    overflow: hidden;
+    .transition(width 0.2s ease-in);
+    .menu-wrapper {
+        padding: 20px;
+    }
+    ul,li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+    }
+    &.in {
+        width: 200px;
+        .menu-wrapper {
+            right: 0;
+        }
+    }
+}
+
+.page-wrapper {
+    margin: 0 auto;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.animated-flower {
+
+    @keyframes flower {
+        0% {
+            transform: rotateX(0deg) translateX(0);
+        }
+        50% {
+            transform: rotateX(-0.2deg) translateX(0.5em);
+        }
+        100% {
+            transform: rotateX(0deg) translateX(0);
+        }
+    }
+    perspective: 150px;
+    perspective-origin: 10% 10%;
+    background: #5480F9;
+    img {
+        animation: flower 4s linear infinite;
+        width: 50%;
+    }
+}
+
+.home {
+    background: url(../images/portrait.jpg) 0 0 / cover;
+    height: 95vh;
+    position: relative;
+}
+
+.author {
+    .teaser{
+        &.book {
+            margin-top: 30px;
+            border-top: 1px solid #000;
+        }
+    }
+}
